@@ -966,7 +966,7 @@ class SoftwareUpdatePlugin(octoprint.plugin.BlueprintPlugin,
 			if updater is None:
 				raise exceptions.UnknownUpdateType()
 
-			update_result = updater.perform_update(target, populated_check, target_version, log_cb=self._log, online=online)
+			update_result = updater.perform_update(target, populated_check, target_version, log_cb=self._log, online=online, force=force)
 			target_result = ("success", update_result)
 			self._logger.info("Update of %s to %s successful!" % (target, target_version))
 			trigger_event(True)

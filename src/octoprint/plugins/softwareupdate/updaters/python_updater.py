@@ -10,7 +10,7 @@ def can_perform_update(target, check, online=True):
 	return "python_updater" in check and check["python_updater"] is not None and hasattr(check["python_updater"], "perform_update") and (online or check.get("offline", False))
 
 
-def perform_update(target, check, target_version, log_cb=None, online=True):
+def perform_update(target, check, target_version, log_cb=None, online=True, force=False):
 	from ..exceptions import CannotUpdateOffline
 
 	if not online and not check("offline", False):
