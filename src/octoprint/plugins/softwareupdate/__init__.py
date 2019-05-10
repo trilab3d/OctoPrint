@@ -252,6 +252,7 @@ class SoftwareUpdatePlugin(octoprint.plugin.BlueprintPlugin,
 		return {
 			"checks": {
 				"octoprint": {
+					"displayName": "TriLAB OctoPrint",
 					"type": "github_release",
 					"user": "trilab3d",
 					"repo": "OctoPrint",
